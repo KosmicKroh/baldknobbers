@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://be0gw1jsr4cgt"]
 
-[ext_resource type="Texture2D" uid="uid://bxhacq1rjhan7" path="res://TempTitleScreenBg.png" id="1_ax32a"]
 [ext_resource type="Script" uid="uid://ds5io6jvf6tai" path="res://title.gd" id="1_quvj1"]
+[ext_resource type="Texture2D" uid="uid://beox6p52hdtcl" path="res://TitleScreenBg.png" id="2_ti4w6"]
 [ext_resource type="AudioStream" uid="uid://d22pcjqgad075" path="res://Audio/openingMusic.mp3" id="3_quvj1"]
 [ext_resource type="Texture2D" uid="uid://did0ca8cqpphr" path="res://Sprites/playerSprite.png" id="4_rg4ux"]
 [ext_resource type="Texture2D" uid="uid://cuhrucg6xgt4y" path="res://Sprites/LockedKnobber.png" id="5_yytgh"]
@@ -24,7 +24,7 @@ script = ExtResource("1_quvj1")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_ax32a")
+texture = ExtResource("2_ti4w6")
 
 [node name="Start" type="Label" parent="."]
 layout_mode = 0
@@ -220,9 +220,3 @@ ignore_texture_size = true
 [connection signal="pressed" from="Start/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Options/OptionButton" to="." method="_on_option_button_pressed"]
 [connection signal="pressed" from="Quit/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="SkinButtons/Skin1" to="." method="_on_skin_button_pressed" binds= [0]]
-[connection signal="pressed" from="SkinButtons/Skin2" to="." method="_on_skin_button_pressed" binds= [1]]
-[connection signal="pressed" from="SkinButtons/Skin3" to="." method="_on_skin_button_pressed" binds= [2]]
-[connection signal="pressed" from="SkinButtons/Skin4" to="." method="_on_skin_button_pressed" binds= [3]]
-[connection signal="pressed" from="SkinButtons/Skin5" to="." method="_on_skin_button_pressed" binds= [4]]
-[connection signal="pressed" from="SkinButtons/Skin6" to="." method="_on_skin_button_pressed" binds= [5]]

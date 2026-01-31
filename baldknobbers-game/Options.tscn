@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://clso20f02usqb"]
 
 [ext_resource type="Script" uid="uid://bvgtpuhvlb787" path="res://options.gd" id="1_yia4p"]
-[ext_resource type="Texture2D" uid="uid://bxhacq1rjhan7" path="res://TempTitleScreenBg.png" id="2_ywiuv"]
+[ext_resource type="Texture2D" uid="uid://beox6p52hdtcl" path="res://TitleScreenBg.png" id="2_ywiuv"]
 [ext_resource type="AudioStream" uid="uid://d22pcjqgad075" path="res://Audio/openingMusic.mp3" id="3_ywiuv"]
 
 [node name="Options" type="Control"]
