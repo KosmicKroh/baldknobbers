@@ -3,6 +3,7 @@ extends Node
 var fireCount:int = 0
 var timer = 0
 var timerEnabled = false
+var volume_ = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
