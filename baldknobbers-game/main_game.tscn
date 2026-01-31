@@ -1,15 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://t12o18bey1qs"]
+[gd_scene load_steps=11 format=3 uid="uid://t12o18bey1qs"]
 
 [ext_resource type="PackedScene" uid="uid://bebwxn5drahad" path="res://manor.tscn" id="1_1oj5k"]
 [ext_resource type="Script" uid="uid://buppb62vbqhwp" path="res://main_game.gd" id="1_dugkq"]
-[ext_resource type="PackedScene" uid="uid://crsdvtn5cgwds" path="res://player.tscn" id="2_yx7mw"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="2_yx7mw"]
 [ext_resource type="AudioStream" uid="uid://cd2dhm1h86nkn" path="res://Audio/gameloopMusic.mp3" id="4_dugkq"]
-[ext_resource type="PackedScene" uid="uid://b1afg14ipc6cj" path="res://Intro.tscn" id="5_2pltu"]
+[ext_resource type="PackedScene" path="res://Intro.tscn" id="5_2pltu"]
+[ext_resource type="Script" uid="uid://btxmx0j56wiyd" path="res://timer.gd" id="6_2pltu"]
+[ext_resource type="Script" uid="uid://0ymrchwsbena" path="res://fires.gd" id="7_f52ns"]
+[ext_resource type="Texture2D" uid="uid://bqth3vy4oaeh3" path="res://Sprites/Wood_On.png" id="8_l5ukw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dugkq"]
 paragraph_spacing = 1.0
 font_size = 40
 stacked_outline_count = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_f52ns"]
+font_size = 60
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.4862745)
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_dugkq")
@@ -46,6 +54,29 @@ Press Q to douse the flames. Press E to fuel them. Hurry, the whole building is 
 label_settings = SubResource("LabelSettings_dugkq")
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Scoreboard" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="Label" parent="Scoreboard"]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_f52ns")
+script = ExtResource("6_2pltu")
+
+[node name="Fires" type="Label" parent="Scoreboard"]
+offset_top = 55.0
+offset_right = 40.0
+offset_bottom = 78.0
+label_settings = SubResource("LabelSettings_f52ns")
+script = ExtResource("7_f52ns")
+
+[node name="TextureRect" type="TextureRect" parent="Scoreboard"]
+offset_left = 225.0
+offset_top = 71.0
+offset_right = 276.0
+offset_bottom = 123.0
+texture = ExtResource("8_l5ukw")
+expand_mode = 1
 
 [connection signal="loaded" from="Manor" to="." method="_on_manor_loaded"]
 [connection signal="done" from="Intro" to="." method="_on_intro_done"]
