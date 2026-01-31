@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsiqbpjwy0ok1"]
+[gd_scene load_steps=9 format=3 uid="uid://dsiqbpjwy0ok1"]
 
 [ext_resource type="Texture2D" uid="uid://cx8cgbnedxl23" path="res://IntroOutro/Ending3.png" id="1_em28o"]
 [ext_resource type="Script" uid="uid://c1ww71geub3od" path="res://ending.gd" id="1_q8f4u"]
 [ext_resource type="AudioStream" uid="uid://da345jkve2fmc" path="res://Audio/endingMusic.mp3" id="3_aict5"]
+[ext_resource type="AudioStream" uid="uid://c0jxrs4hr7n0" path="res://Audio/DeathSFX.mp3" id="4_4gw1y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ipw54"]
 paragraph_spacing = 1.0
@@ -75,5 +76,9 @@ text = "Continue"
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_aict5")
 autoplay = true
+
+[node name="EndSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4gw1y")
+volume_db = 10.0
 
 [connection signal="pressed" from="Button" to="." method="_on_continue_pressed"]
