@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgypv0asrx461"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ipw54"]
+paragraph_spacing = 1.0
+font_size = 40
+stacked_outline_count = 1
+
+[node name="Ending 1" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1930.0
+offset_bottom = 1085.0
+color = Color(0.051970966, 0.05197096, 0.05197095, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -6.0
+offset_top = 636.0
+offset_right = 1928.0
+offset_bottom = 1091.0
+text = "Having put out the flames inside the manor, Frank steps outside. The onlookers cheer for him. 
+The Mayor hands you the key to the city, but as Frank accepts it, the wind picks up and blows the mask effortlessly. Feeling at peace with his choice, Frank looks on as the mask looks for another.
+
+Ending 1/4 
+
+"
+label_settings = SubResource("LabelSettings_ipw54")
+autowrap_mode = 2
