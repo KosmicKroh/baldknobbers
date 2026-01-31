@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bebwxn5drahad"]
 
 [ext_resource type="Script" uid="uid://d4cimpfyootth" path="res://manor.gd" id="1_vkg0j"]
-[ext_resource type="PackedScene" uid="uid://c0qrritywwxio" path="res://room_hallway.tscn" id="2_y2hr2"]
+[ext_resource type="PackedScene" uid="uid://c201y4aour41x" path="res://room_foyer.tscn" id="2_y2hr2"]
 
 [node name="Manor" type="Node2D"]
 script = ExtResource("1_vkg0j")
 
 [node name="Origin" parent="." instance=ExtResource("2_y2hr2")]
-rotation = -1.5707964

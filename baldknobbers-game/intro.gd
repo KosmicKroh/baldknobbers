@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 	else:
 		introTimer = 10.0
 		next_text()
-	if loaded:
+	if loaded and Globals.played:
 		$SkipReady.visible = true
 		if Input.is_action_just_pressed("ui_accept"):
 			done.emit()

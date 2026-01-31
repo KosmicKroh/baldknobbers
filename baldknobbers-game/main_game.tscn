@@ -28,14 +28,21 @@ script = ExtResource("1_dugkq")
 [node name="Manor" parent="." instance=ExtResource("1_1oj5k")]
 
 [node name="Player" parent="." instance=ExtResource("2_yx7mw")]
-position = Vector2(0, -89)
+position = Vector2(302, 364)
 wall_min_slide_angle = 0.2617994
 
 [node name="Entrance" type="Area2D" parent="."]
-position = Vector2(0, -53)
+position = Vector2(302, 400)
 
 [node name="Collider" type="CollisionShape2D" parent="Entrance"]
 shape = SubResource("CircleShape2D_l5ukw")
+
+[node name="ColorRect" type="ColorRect" parent="Entrance"]
+offset_left = -50.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 40.0
+color = Color(0.37091735, 0.2150434, 0.12124016, 1)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dugkq")

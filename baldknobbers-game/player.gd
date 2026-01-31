@@ -6,6 +6,7 @@ var waterTexture = load("res://Sprites/WaterDrop.png")
 var fireTexture = load("res://Sprites/Fireball.png")
 var isWater:bool = true
 var emitTimer = 0.0
+var isPlayer:bool = true
 
 
 func _physics_process(delta: float) -> void:

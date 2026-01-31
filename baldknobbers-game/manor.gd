@@ -65,4 +65,6 @@ func _physics_process(delta: float) -> void:
 		newRoom.find_child("Exits").remove_child(newEntrance)
 		add_child(newRoom)
 		started = true
+		
+	
 	
