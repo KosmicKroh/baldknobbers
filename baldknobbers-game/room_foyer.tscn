@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=3 uid="uid://c201y4aour41x"]
+
+[ext_resource type="PackedScene" uid="uid://dfkeumiwry0tg" path="res://room_base.tscn" id="1_vedqi"]
+[ext_resource type="Texture2D" uid="uid://c6jtba2ffk6cc" path="res://T_Room_Foyer.png" id="2_rvniy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayjte"]
+size = Vector2(365, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylyqy"]
+size = Vector2(122.5, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8whc"]
+size = Vector2(31.5, 370.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4b6c"]
+size = Vector2(31.5, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15321"]
+size = Vector2(602.5, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2hqa"]
+size = Vector2(33, 336)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjwfw"]
+size = Vector2(91, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fithu"]
+size = Vector2(91, 96.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj8p3"]
+size = Vector2(268, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvniy"]
+size = Vector2(591, 588)
+
+[node name="room_base" instance=ExtResource("1_vedqi")]
+
+[node name="BG" parent="Layout" index="0"]
+texture = ExtResource("2_rvniy")
+
+[node name="HitBox1" type="StaticBody2D" parent="Layout" index="1"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/HitBox1" index="0"]
+position = Vector2(183.5, 14.5)
+shape = SubResource("RectangleShape2D_ayjte")
+
+[node name="HitBox3" type="StaticBody2D" parent="Layout" index="2"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/HitBox3" index="0"]
+position = Vector2(540.25, 15)
+shape = SubResource("RectangleShape2D_ylyqy")
+
+[node name="HitBox4" type="StaticBody2D" parent="Layout" index="3"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/HitBox4" index="0"]
+position = Vector2(585.75, 184.75)
+shape = SubResource("RectangleShape2D_k8whc")
+
+[node name="HitBox5" type="StaticBody2D" parent="Layout" index="4"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/HitBox5" index="0"]
+position = Vector2(585.75, 536)
+shape = SubResource("RectangleShape2D_u4b6c")
+
+[node name="HitBox6" type="StaticBody2D" parent="Layout" index="5"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/HitBox6" index="0"]
+position = Vector2(300.25, 585)
+shape = SubResource("RectangleShape2D_15321")
+
+[node name="HitBox7" type="StaticBody2D" parent="Layout" index="6"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/HitBox7" index="0"]
+position = Vector2(15.5, 432)
+shape = SubResource("RectangleShape2D_v2hqa")
+
+[node name="HitBox8" type="StaticBody2D" parent="Layout" index="7"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/HitBox8" index="0"]
+position = Vector2(72.5, 527.5)
+shape = SubResource("RectangleShape2D_yjwfw")
+
+[node name="HitBox9" type="StaticBody2D" parent="Layout" index="8"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/HitBox9" index="0"]
+position = Vector2(553, 194)
+shape = SubResource("RectangleShape2D_fithu")
+
+[node name="HitBox2" type="StaticBody2D" parent="Layout" index="9"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/HitBox2" index="0"]
+position = Vector2(135, 55)
+shape = SubResource("RectangleShape2D_tj8p3")
+
+[node name="Exit1" parent="Exits" index="0"]
+position = Vector2(422, 0)
+rotation = -1.5707964
+
+[node name="Exit2" parent="Exits" index="1"]
+position = Vector2(0, 211)
+rotation = 3.1415927
+
+[node name="Exit3" type="Marker2D" parent="Exits" index="2"]
+position = Vector2(600, 421)
+gizmo_extents = 85.6
+
+[node name="Collision" parent="Hitbox" index="0"]
+visible = false
+position = Vector2(299.5, 299)
+shape = SubResource("RectangleShape2D_rvniy")
+
+[node name="WoodPile" parent="WoodPiles" index="0"]
+position = Vector2(274, 239)
+
+[node name="WoodPile2" parent="WoodPiles" index="1"]
+position = Vector2(150, -98)
