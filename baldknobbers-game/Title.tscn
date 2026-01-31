@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://be0gw1jsr4cgt"]
+[gd_scene load_steps=12 format=3 uid="uid://be0gw1jsr4cgt"]
 
 [ext_resource type="Script" uid="uid://ds5io6jvf6tai" path="res://title.gd" id="1_quvj1"]
 [ext_resource type="Texture2D" uid="uid://beox6p52hdtcl" path="res://TitleScreenBg.png" id="2_ti4w6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://r48rb1t1sg4n" path="res://Sprites/playerSprite4.png" id="8_xyp27"]
 [ext_resource type="Texture2D" uid="uid://domblll8t5iqd" path="res://Sprites/playerSprite5.png" id="9_73gom"]
 [ext_resource type="Texture2D" uid="uid://drv2rymieaktu" path="res://Sprites/playerSprite6.png" id="10_gvmy1"]
+[ext_resource type="Texture2D" uid="uid://cp5r6k6w4kjwe" path="res://RoomSprites/DIGS LOGO.png" id="11_e8qc1"]
 
 [node name="Title" type="Control"]
 layout_mode = 3
@@ -216,6 +217,11 @@ pivot_offset = Vector2(64, 64)
 texture_normal = ExtResource("10_gvmy1")
 texture_disabled = ExtResource("5_yytgh")
 ignore_texture_size = true
+
+[node name="DIGS-Logo" type="Sprite2D" parent="."]
+position = Vector2(1823, 982)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_e8qc1")
 
 [connection signal="pressed" from="Start/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Options/OptionButton" to="." method="_on_option_button_pressed"]

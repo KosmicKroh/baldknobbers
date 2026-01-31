@@ -15,7 +15,8 @@ config/description="The Baldknobbers are attempting to burn down the Mayor's Man
 config/version="1.0"
 run/main_scene="uid://be0gw1jsr4cgt"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="uid://cp5r6k6w4kjwe"
+config/icon="uid://bqth3vy4oaeh3"
 
 [autoload]
 
