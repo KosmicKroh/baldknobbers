@@ -6,7 +6,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$SkinButtons/Skin2.disabled = !Globals.endings[0]
 	$SkinButtons/Skin3.disabled = !Globals.endings[1]
 	$SkinButtons/Skin4.disabled = !Globals.endings[2]
