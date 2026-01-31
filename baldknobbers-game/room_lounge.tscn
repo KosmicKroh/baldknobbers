@@ -1,0 +1,131 @@
+[gd_scene load_steps=12 format=3 uid="uid://dkbmiwj7e08ii"]
+
+[ext_resource type="PackedScene" uid="uid://dfkeumiwry0tg" path="res://room_base.tscn" id="1_tfm3e"]
+[ext_resource type="Texture2D" uid="uid://bvddvx5o3108h" path="res://RoomSprites/GGJ2026_Lounge.png" id="2_rrqhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrqhm"]
+size = Vector2(34, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2ujk"]
+size = Vector2(34, 263)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4vns"]
+size = Vector2(263, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsq5c"]
+size = Vector2(242, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghtvd"]
+size = Vector2(263, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fgms"]
+size = Vector2(237, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ar80g"]
+size = Vector2(262, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5d1u"]
+size = Vector2(162, 76.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmgx5"]
+size = Vector2(592, 592)
+
+[node name="room_base" instance=ExtResource("1_tfm3e")]
+
+[node name="BG" parent="Layout" index="0"]
+texture = ExtResource("2_rrqhm")
+
+[node name="Hitbox1" type="StaticBody2D" parent="Layout" index="1"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox1" index="0"]
+position = Vector2(16, 119)
+shape = SubResource("RectangleShape2D_rrqhm")
+
+[node name="Hitbox2" type="StaticBody2D" parent="Layout" index="2"]
+position = Vector2(567, 0)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox2" index="0"]
+position = Vector2(16, 119)
+shape = SubResource("RectangleShape2D_rrqhm")
+
+[node name="Hitbox3" type="StaticBody2D" parent="Layout" index="3"]
+position = Vector2(0, 335)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox3" index="0"]
+position = Vector2(16, 130.5)
+shape = SubResource("RectangleShape2D_x2ujk")
+
+[node name="Hitbox4" type="StaticBody2D" parent="Layout" index="4"]
+position = Vector2(566, 335)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox4" index="0"]
+position = Vector2(16, 130.5)
+shape = SubResource("RectangleShape2D_x2ujk")
+
+[node name="Hitbox5" type="StaticBody2D" parent="Layout" index="5"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox5" index="0"]
+position = Vector2(130.5, 15.5)
+shape = SubResource("RectangleShape2D_x4vns")
+
+[node name="Hitbox6" type="StaticBody2D" parent="Layout" index="6"]
+position = Vector2(338, 0)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox6" index="0"]
+position = Vector2(141, 15.5)
+shape = SubResource("RectangleShape2D_fsq5c")
+
+[node name="Hitbox7" type="StaticBody2D" parent="Layout" index="7"]
+position = Vector2(0, 565)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox7" index="0"]
+position = Vector2(130.5, -9)
+shape = SubResource("RectangleShape2D_ghtvd")
+
+[node name="Hitbox8" type="StaticBody2D" parent="Layout" index="8"]
+position = Vector2(337, 565)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox8" index="0"]
+position = Vector2(143.5, 16)
+shape = SubResource("RectangleShape2D_8fgms")
+
+[node name="Hitbox9" type="StaticBody2D" parent="Layout" index="9"]
+position = Vector2(97, 114)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox9" index="0"]
+position = Vector2(154, 61.5)
+shape = SubResource("RectangleShape2D_ar80g")
+
+[node name="Hitbox10" type="StaticBody2D" parent="Layout" index="10"]
+position = Vector2(97, 114)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox10" index="0"]
+position = Vector2(211, 138.25)
+shape = SubResource("RectangleShape2D_s5d1u")
+
+[node name="Exit1" parent="Exits" index="0"]
+position = Vector2(600, 288)
+
+[node name="Exit4" type="Marker2D" parent="Exits" index="1"]
+position = Vector2(0, 288)
+rotation = 3.1415927
+gizmo_extents = 85.6
+
+[node name="Exit3" type="Marker2D" parent="Exits" index="2"]
+position = Vector2(314, 0)
+rotation = -1.5707964
+gizmo_extents = 85.6
+
+[node name="Exit2" parent="Exits" index="3"]
+position = Vector2(314, 600)
+
+[node name="Collision" parent="Hitbox" index="0"]
+visible = false
+position = Vector2(300, 301)
+shape = SubResource("RectangleShape2D_mmgx5")
+
+[node name="WoodPile" parent="WoodPiles" index="0"]
+position = Vector2(140, 275)
+
+[node name="WoodPile2" parent="WoodPiles" index="1"]
+position = Vector2(473, 51)

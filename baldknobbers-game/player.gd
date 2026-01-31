@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	var directionY := Input.get_axis("walk_up", "walk_down")
 	
 	if directionX or directionY:
-		velocity = Vector2(directionX,directionY).normalized()*SPEED
+		velocity += (Vector2(directionX,directionY).normalized()*SPEED-velocity)*0.1
 		if directionX == 1:
 			rotation = 0
 		elif directionX == -1:
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		elif directionY == -1:
 			rotation = -PI/2
 	else:
-		velocity *= 0.9
+		velocity *= 0.93
 	
 	if Input.is_action_just_pressed("add_water") and emitTimer <=0:
 		$Particles.texture = waterTexture

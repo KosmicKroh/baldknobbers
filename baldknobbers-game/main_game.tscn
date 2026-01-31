@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://t12o18bey1qs"]
+[gd_scene load_steps=4 format=3 uid="uid://t12o18bey1qs"]
 
 [ext_resource type="PackedScene" uid="uid://bebwxn5drahad" path="res://manor.tscn" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://crsdvtn5cgwds" path="res://player.tscn" id="2_yx7mw"]
+[ext_resource type="AudioStream" uid="uid://cfuwxiy1vajfy" path="res://Audio/baldknobberMusic.mp3" id="3_ykeeq"]
 
 [node name="MainGame" type="Node2D"]
 
 [node name="Manor" parent="." instance=ExtResource("1_1oj5k")]
 
 [node name="Player" parent="." instance=ExtResource("2_yx7mw")]
+position = Vector2(0, -89)
+wall_min_slide_angle = 0.2617994
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ykeeq")
+autoplay = true

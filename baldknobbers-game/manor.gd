@@ -2,7 +2,9 @@ extends Node2D
 
 var roomScenes = [
 	load("res://room_bath.tscn"),
-	load("res://room_hallway.tscn")
+	load("res://room_hallway.tscn"),
+	load("res://room_lounge.tscn"),
+	load("res://room_bedroom.tscn")
 ]
 var closedExit = load("res://closed_exit.tscn")
 @export var manorSize:int = 50
@@ -36,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	# Check for Overlapping Room
 	if started and roomsPlaced < manorSize:
 		var lastRoom:Node2D = get_child(get_child_count()-1)
-		if lastRoom.find_child("Hitbox").has_overlapping_areas():
+		if lastRoom.find_child("Hitbox").has_overlapping_areas() or lastRoom.global_position.y >= $Origin.position.y-50:
 			lastRoom.queue_free()
 		else:
 			roomsPlaced += 1

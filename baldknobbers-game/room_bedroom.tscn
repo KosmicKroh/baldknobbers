@@ -1,0 +1,119 @@
+[gd_scene load_steps=12 format=3 uid="uid://d1gh6a8ixuthx"]
+
+[ext_resource type="PackedScene" uid="uid://dfkeumiwry0tg" path="res://room_base.tscn" id="1_iftn3"]
+[ext_resource type="Texture2D" uid="uid://cqjqm577wejqv" path="res://RoomSprites/GGJ2026_Bedroom.png" id="2_fxlll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxlll"]
+size = Vector2(451, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nk7n"]
+size = Vector2(32, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ykd"]
+size = Vector2(59, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djhtb"]
+size = Vector2(32, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sacwn"]
+size = Vector2(194, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og84b"]
+size = Vector2(150, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3fgf"]
+size = Vector2(122, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4ssn"]
+size = Vector2(83, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwgwj"]
+size = Vector2(446, 442)
+
+[node name="room_base" instance=ExtResource("1_iftn3")]
+
+[node name="BG" parent="Layout" index="0"]
+texture = ExtResource("2_fxlll")
+
+[node name="Hitbox1" type="StaticBody2D" parent="Layout" index="1"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox1" index="0"]
+position = Vector2(225.5, 11)
+shape = SubResource("RectangleShape2D_fxlll")
+
+[node name="Hitbox2" type="StaticBody2D" parent="Layout" index="2"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox2" index="0"]
+position = Vector2(16, 84)
+shape = SubResource("RectangleShape2D_1nk7n")
+
+[node name="Hitbox3" type="StaticBody2D" parent="Layout" index="3"]
+position = Vector2(419, 0)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox3" index="0"]
+position = Vector2(2.5, 84)
+shape = SubResource("RectangleShape2D_s7ykd")
+
+[node name="Hitbox4" type="StaticBody2D" parent="Layout" index="4"]
+position = Vector2(1, 275)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox4" index="0"]
+position = Vector2(16, 84)
+shape = SubResource("RectangleShape2D_djhtb")
+
+[node name="Hitbox5" type="StaticBody2D" parent="Layout" index="5"]
+position = Vector2(1, 275)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox5" index="0"]
+position = Vector2(97, 138)
+shape = SubResource("RectangleShape2D_sacwn")
+
+[node name="Hitbox6" type="StaticBody2D" parent="Layout" index="6"]
+position = Vector2(417, 275)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox6" index="0"]
+position = Vector2(16, 84)
+shape = SubResource("RectangleShape2D_djhtb")
+
+[node name="Hitbox7" type="StaticBody2D" parent="Layout" index="7"]
+position = Vector2(417, 275)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox7" index="0"]
+position = Vector2(-43, 161)
+shape = SubResource("RectangleShape2D_og84b")
+
+[node name="Hitbox8" type="StaticBody2D" parent="Layout" index="8"]
+position = Vector2(417, 275)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox8" index="0"]
+position = Vector2(-195, -163)
+shape = SubResource("RectangleShape2D_w3fgf")
+
+[node name="Hitbox9" type="StaticBody2D" parent="Layout" index="9"]
+position = Vector2(417, 275)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox9" index="0"]
+position = Vector2(-293.5, -208.5)
+shape = SubResource("RectangleShape2D_u4ssn")
+
+[node name="Exit1" parent="Exits" index="0"]
+position = Vector2(450, 219)
+
+[node name="Exit3" type="Marker2D" parent="Exits" index="1"]
+position = Vector2(0, 219)
+rotation = 3.1415927
+gizmo_extents = 85.6
+
+[node name="Exit2" parent="Exits" index="2"]
+position = Vector2(247, 450)
+
+[node name="Collision" parent="Hitbox" index="0"]
+visible = false
+position = Vector2(227, 226)
+shape = SubResource("RectangleShape2D_pwgwj")
+
+[node name="WoodPile" parent="WoodPiles" index="0"]
+position = Vector2(116, 164)
+
+[node name="WoodPile2" parent="WoodPiles" index="1"]
+position = Vector2(336, -54)
