@@ -1,16 +1,12 @@
-extends Area2D
+extends Node
 
-var isWood:bool = true
-var on = 0
+var fireCount:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	on = 0
-	
+	fireCount = 0
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if on:
-		$Sprites.play("on")
-	else:
-		$Sprites.play("off")
+func _process(delta: float) -> void:
+	pass

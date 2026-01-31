@@ -48,7 +48,12 @@ func _physics_process(delta: float) -> void:
 	if $EffectArea.monitoring:
 		for thing in $EffectArea.get_overlapping_areas():
 			if "isWood" in thing:
-				print("lol")
-				thing.on = !isWater
+				if isWater and thing.on:
+					thing.on = false
+					Globals.fireCount -= 1
+				if !isWater and !thing.on:
+					thing.on = true
+					Globals.fireCount += 1
+				print(Globals.fireCount)
 
 	move_and_slide()

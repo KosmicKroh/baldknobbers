@@ -9,6 +9,7 @@ var closedExit = load("res://closed_exit.tscn")
 var roomsPlaced:int = 0
 var newExitIndex = 0
 var availableExits = []
+var woodPiles = []
 var started = false
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +25,11 @@ func close_exits() -> void:
 		newClose.global_transform = i.global_transform
 		newClose.rotation += PI
 		add_child(newClose)
+	woodPiles.shuffle()
+	for i in manorSize:
+		woodPiles[i].on = 1
+	Globals.fireCount = manorSize
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -34,6 +40,8 @@ func _physics_process(delta: float) -> void:
 			lastRoom.queue_free()
 		else:
 			roomsPlaced += 1
+			woodPiles.append(lastRoom.find_child("WoodPiles").get_child(0))
+			woodPiles.append(lastRoom.find_child("WoodPiles").get_child(1))
 			availableExits.remove_at(newExitIndex)
 			for exit in lastRoom.find_child("Exits").get_children():
 				availableExits.append(exit)

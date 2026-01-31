@@ -32,8 +32,9 @@ scale_max = 0.19999999
 scale_curve = SubResource("CurveTexture_sweqy")
 alpha_curve = SubResource("CurveTexture_hqtel")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
-size = Vector2(60, 66)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
+radius = 16.0
+height = 66.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
 radius = 53.0
@@ -57,7 +58,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_i3pqv")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_sh265")
+shape = SubResource("CapsuleShape2D_i3pqv")
 
 [node name="EffectArea" type="Area2D" parent="."]
 monitoring = false
