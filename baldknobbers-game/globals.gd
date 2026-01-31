@@ -4,6 +4,7 @@ var fireCount:int = 0
 var timer = 0
 var timerEnabled = false
 var volume_ = 70
+var skin:int = 0
 var endings = [false,false,false,false]
 var played = false
 
@@ -14,6 +15,7 @@ func load_data():
 	if err != OK:
 		return
 	volume_ = config.get_value("Options","Volume",70)
+	skin = config.get_value("Options","Skin",0)
 	endings[0] = config.get_value("Endings","1st",false)
 	endings[1] = config.get_value("Endings","2nd",false)
 	endings[2] = config.get_value("Endings","3rd",false)
@@ -22,6 +24,7 @@ func load_data():
 func save_data():
 	var config = ConfigFile.new()
 	config.set_value("Options","Volume",volume_)
+	config.set_value("Options","Skin",skin)
 	config.set_value("Endings","1st",endings[0])
 	config.set_value("Endings","2nd",endings[1])
 	config.set_value("Endings","3rd",endings[2])
