@@ -6,6 +6,7 @@ var roomScenes = [
 	load("res://room_bath.tscn"),
 	load("res://room_hallway.tscn"),
 	load("res://room_lounge.tscn"),
+	load("res://room_kitchen.tscn"),
 	load("res://room_bedroom.tscn")
 ]
 var closedExit = load("res://closed_exit.tscn")
