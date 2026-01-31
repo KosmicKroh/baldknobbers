@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://t12o18bey1qs"]
+[gd_scene load_steps=13 format=3 uid="uid://t12o18bey1qs"]
 
 [ext_resource type="PackedScene" uid="uid://bebwxn5drahad" path="res://manor.tscn" id="1_1oj5k"]
 [ext_resource type="Script" uid="uid://buppb62vbqhwp" path="res://main_game.gd" id="1_dugkq"]
 [ext_resource type="PackedScene" uid="uid://crsdvtn5cgwds" path="res://player.tscn" id="2_yx7mw"]
 [ext_resource type="AudioStream" uid="uid://cd2dhm1h86nkn" path="res://Audio/gameloopMusic.mp3" id="4_dugkq"]
 [ext_resource type="PackedScene" uid="uid://b1afg14ipc6cj" path="res://Intro.tscn" id="5_2pltu"]
+[ext_resource type="AudioStream" uid="uid://3egrihi1yyii" path="res://Audio/FranticKnobbing.mp3" id="5_4srsv"]
 [ext_resource type="Script" uid="uid://btxmx0j56wiyd" path="res://timer.gd" id="6_2pltu"]
 [ext_resource type="Script" uid="uid://0ymrchwsbena" path="res://fires.gd" id="7_f52ns"]
 [ext_resource type="Texture2D" uid="uid://bqth3vy4oaeh3" path="res://Sprites/Wood_On.png" id="8_l5ukw"]
@@ -46,6 +47,9 @@ color = Color(0.37091735, 0.2150434, 0.12124016, 1)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dugkq")
+
+[node name="FastMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4srsv")
 
 [node name="Intro" parent="." instance=ExtResource("5_2pltu")]
 

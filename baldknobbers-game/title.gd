@@ -6,7 +6,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	$SkinButtons/Skin2.disabled = !Globals.endings[0]
 	$SkinButtons/Skin3.disabled = !Globals.endings[1]
 	$SkinButtons/Skin4.disabled = !Globals.endings[2]
@@ -18,8 +18,11 @@ func _process(_delta: float) -> void:
 	for button in $SkinButtons.get_child_count():
 		if Globals.skin == button:
 			$SkinButtons.get_child(button).scale = Vector2(1.5,1.5)
+			$SkinButtons.get_child(button).rotation += delta*3.0
 		else:
 			$SkinButtons.get_child(button).scale = Vector2(1.0,1.0)
+			$SkinButtons.get_child(button).rotation -= $SkinButtons.get_child(button).rotation*0.1
+			$SkinButtons.get_child(button).rotation = fmod($SkinButtons.get_child(button).rotation,PI*2)
 
 
 func _on_start_button_pressed() -> void:

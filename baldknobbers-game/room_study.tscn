@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=3 uid="uid://33rer6ywhb6u"]
+
+[ext_resource type="PackedScene" uid="uid://dfkeumiwry0tg" path="res://room_base.tscn" id="1_f4a2l"]
+[ext_resource type="Texture2D" uid="uid://bqcxumlc3xosw" path="res://RoomSprites/GGJ2026_Study.png" id="2_6jume"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jume"]
+size = Vector2(88, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22mn8"]
+size = Vector2(75, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5k6k"]
+size = Vector2(67, 301.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoojc"]
+size = Vector2(117, 120.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ahs0"]
+size = Vector2(32, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li67u"]
+size = Vector2(188, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esejh"]
+size = Vector2(165, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guyf5"]
+size = Vector2(443, 291)
+
+[node name="room_base" instance=ExtResource("1_f4a2l")]
+
+[node name="BG" parent="Layout" index="0"]
+texture = ExtResource("2_6jume")
+
+[node name="Hitbox1" type="StaticBody2D" parent="Layout" index="1"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox1" index="0"]
+position = Vector2(44, 16.5)
+shape = SubResource("RectangleShape2D_6jume")
+
+[node name="Hitbox2" type="StaticBody2D" parent="Layout" index="2"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox2" index="0"]
+position = Vector2(68.5, 235.5)
+shape = SubResource("RectangleShape2D_22mn8")
+
+[node name="Hitbox3" type="StaticBody2D" parent="Layout" index="3"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox3" index="0"]
+position = Vector2(411.5, 149.25)
+shape = SubResource("RectangleShape2D_r5k6k")
+
+[node name="Hitbox4" type="StaticBody2D" parent="Layout" index="4"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox4" index="0"]
+position = Vector2(230.5, 58.625)
+shape = SubResource("RectangleShape2D_hoojc")
+
+[node name="Hitbox5" type="StaticBody2D" parent="Layout" index="5"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox5" index="0"]
+position = Vector2(16, 150)
+shape = SubResource("RectangleShape2D_1ahs0")
+
+[node name="Hitbox6" type="StaticBody2D" parent="Layout" index="6"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox6" index="0"]
+position = Vector2(94, 284)
+shape = SubResource("RectangleShape2D_li67u")
+
+[node name="Hitbox7" type="StaticBody2D" parent="Layout" index="7"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox7" index="0"]
+position = Vector2(362.5, 284)
+shape = SubResource("RectangleShape2D_esejh")
+
+[node name="Exit1" parent="Exits" index="0"]
+position = Vector2(235, 300)
+rotation = 1.5707964
+
+[node name="Exit2" parent="Exits" index="1"]
+position = Vector2(130, 0)
+rotation = -1.5707964
+
+[node name="Exit3" type="Marker2D" parent="Exits" index="2"]
+position = Vector2(328, 0)
+rotation = -1.5707964
+gizmo_extents = 85.6
+
+[node name="Collision" parent="Hitbox" index="0"]
+visible = false
+position = Vector2(225.5, 150.5)
+shape = SubResource("RectangleShape2D_guyf5")
+
+[node name="WoodPile" parent="WoodPiles" index="0"]
+position = Vector2(81, -65)
+
+[node name="WoodPile2" parent="WoodPiles" index="1"]
+position = Vector2(333, -72)

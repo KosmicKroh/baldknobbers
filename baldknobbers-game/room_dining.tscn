@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://djh4qkm1a1rfg"]
+
+[ext_resource type="PackedScene" uid="uid://dfkeumiwry0tg" path="res://room_base.tscn" id="1_tmkt7"]
+[ext_resource type="Texture2D" uid="uid://jsj8aiup4xwu" path="res://RoomSprites/GGJ2026_Dining.png" id="2_pwfgu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwfgu"]
+size = Vector2(32, 155)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w00j1"]
+size = Vector2(32, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3161l"]
+size = Vector2(408, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5mfu"]
+size = Vector2(397, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3n0p8"]
+size = Vector2(95, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tp3w"]
+size = Vector2(73.5, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx3ra"]
+size = Vector2(320, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq5cn"]
+size = Vector2(594, 442)
+
+[node name="room_base" instance=ExtResource("1_tmkt7")]
+
+[node name="BG" parent="Layout" index="0"]
+texture = ExtResource("2_pwfgu")
+
+[node name="Hitbox1" type="StaticBody2D" parent="Layout" index="1"]
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox1" index="0"]
+position = Vector2(16, 77.5)
+shape = SubResource("RectangleShape2D_pwfgu")
+
+[node name="Hitbox2" type="StaticBody2D" parent="Layout" index="2"]
+position = Vector2(0, 297)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox2" index="0"]
+position = Vector2(16, 72.5)
+shape = SubResource("RectangleShape2D_w00j1")
+
+[node name="Hitbox3" type="StaticBody2D" parent="Layout" index="3"]
+position = Vector2(568, 297)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox3" index="0"]
+position = Vector2(16, 72.5)
+shape = SubResource("RectangleShape2D_w00j1")
+
+[node name="Hitbox4" type="StaticBody2D" parent="Layout" index="4"]
+position = Vector2(568, 10)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox4" index="0"]
+position = Vector2(16, 72.5)
+shape = SubResource("RectangleShape2D_w00j1")
+
+[node name="Hitbox5" type="StaticBody2D" parent="Layout" index="5"]
+position = Vector2(377, 10)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox5" index="0"]
+position = Vector2(-172, 6)
+shape = SubResource("RectangleShape2D_3161l")
+
+[node name="Hitbox6" type="StaticBody2D" parent="Layout" index="6"]
+position = Vector2(377, 10)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox6" index="0"]
+position = Vector2(25.5, 425)
+shape = SubResource("RectangleShape2D_b5mfu")
+
+[node name="Hitbox7" type="StaticBody2D" parent="Layout" index="7"]
+position = Vector2(377, 10)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox7" index="0"]
+position = Vector2(-329.5, 425.5)
+shape = SubResource("RectangleShape2D_3n0p8")
+
+[node name="Hitbox8" type="StaticBody2D" parent="Layout" index="8"]
+position = Vector2(377, 10)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox8" index="0"]
+position = Vector2(185.75, 6)
+shape = SubResource("RectangleShape2D_7tp3w")
+
+[node name="Hitbox9" type="StaticBody2D" parent="Layout" index="9"]
+position = Vector2(377, 10)
+
+[node name="Collider" type="CollisionShape2D" parent="Layout/Hitbox9" index="0"]
+position = Vector2(-74, 219)
+shape = SubResource("RectangleShape2D_bx3ra")
+
+[node name="Exit1" parent="Exits" index="0"]
+position = Vector2(600, 225)
+
+[node name="Exit3" type="Marker2D" parent="Exits" index="1"]
+position = Vector2(0, 225)
+rotation = 3.1415927
+gizmo_extents = 85.6
+
+[node name="Exit2" parent="Exits" index="2"]
+position = Vector2(150, 450)
+
+[node name="Exit4" type="Marker2D" parent="Exits" index="3"]
+position = Vector2(465, 0)
+rotation = -1.5707964
+gizmo_extents = 85.6
+
+[node name="Collision" parent="Hitbox" index="0"]
+visible = false
+position = Vector2(301, 226)
+shape = SubResource("RectangleShape2D_wq5cn")
+
+[node name="WoodPile" parent="WoodPiles" index="0"]
+position = Vector2(94, -55)
+
+[node name="WoodPile2" parent="WoodPiles" index="1"]
+position = Vector2(505, 195)

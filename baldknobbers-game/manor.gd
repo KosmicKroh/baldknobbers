@@ -8,7 +8,9 @@ var roomScenes = [
 	load("res://room_lounge.tscn"),
 	load("res://room_kitchen.tscn"),
 	load("res://room_foyer.tscn"),
-	load("res://room_bedroom.tscn")
+	load("res://room_bedroom.tscn"),
+	load("res://room_dining.tscn"),
+	load("res://room_study.tscn")
 ]
 var closedExit = load("res://closed_exit.tscn")
 @export var manorSize:int = 50
@@ -38,7 +40,7 @@ func close_exits() -> void:
 	loaded.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# Check for Overlapping Room
 	if started and roomsPlaced < manorSize:
 		var lastRoom:Node2D = get_child(get_child_count()-1)
