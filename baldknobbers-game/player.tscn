@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://crsdvtn5cgwds"]
 
-[ext_resource type="Texture2D" uid="uid://28k7yvg5waf8" path="res://Sprites/BaldknobberPlaceholder.jpg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d1fent70vmhh4" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://ck58ka2nsdr55" path="res://Sprites/Water Drop.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://did0ca8cqpphr" path="res://Sprites/playerSprite.png" id="3_i3pqv"]
 
 [sub_resource type="Curve" id="Curve_i3pqv"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.82558143, 0.58646), -0.5632377, -0.5632377, 0, 0, Vector2(1, 0), -3.3748415, 0.0, 0, 0]
@@ -22,6 +22,7 @@ curve = SubResource("Curve_hqtel")
 particle_flag_disable_z = true
 angle_min = 1.0728835e-05
 angle_max = 184.90001
+inherit_velocity_ratio = 1.0
 spread = 11.25
 initial_velocity_min = 100.0
 initial_velocity_max = 150.0
@@ -52,9 +53,8 @@ explosiveness = 0.21
 process_material = SubResource("ParticleProcessMaterial_2hs0m")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-rotation = 1.5707964
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_4flbx")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_i3pqv")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sh265")
