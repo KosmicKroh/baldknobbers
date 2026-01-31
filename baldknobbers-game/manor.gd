@@ -1,5 +1,7 @@
 extends Node2D
 
+signal loaded
+
 var roomScenes = [
 	load("res://room_bath.tscn"),
 	load("res://room_hallway.tscn"),
@@ -31,7 +33,7 @@ func close_exits() -> void:
 	for i in manorSize:
 		woodPiles[i].on = 1
 	Globals.fireCount = manorSize
-		
+	loaded.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

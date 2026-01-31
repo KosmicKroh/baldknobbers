@@ -28,22 +28,19 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity *= 0.93
 	
-	if Input.is_action_just_pressed("add_water") and emitTimer <=0:
+	if Input.is_action_pressed("add_water"):
 		$Particles.texture = waterTexture
 		$Particles.emitting = true
 		isWater = true
-		emitTimer = 0.5
 		$EffectArea.monitoring = true
-		
-	if Input.is_action_just_pressed("add_fire") and emitTimer <=0:
+	elif Input.is_action_pressed("add_fire"):
 		$Particles.texture = fireTexture
 		$Particles.emitting = true
 		isWater = false
-		emitTimer = 0.5
 		$EffectArea.monitoring = true
-	
-	if emitTimer < 0:
+	else:
 		$EffectArea.monitoring = false
+		$Particles.emitting = false
 	
 	if $EffectArea.monitoring:
 		for thing in $EffectArea.get_overlapping_areas():

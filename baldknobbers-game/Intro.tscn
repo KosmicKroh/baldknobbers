@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1afg14ipc6cj"]
+
+[ext_resource type="Script" uid="uid://cdmfjtnngxw20" path="res://intro.gd" id="1_gjrx4"]
+[ext_resource type="Texture2D" uid="uid://378k5h5xbkmo" path="res://IntroOutro/Intro1.png" id="2_vltdc"]
+[ext_resource type="Texture2D" uid="uid://brxjjvuj8xmhi" path="res://IntroOutro/Intro2.png" id="3_33sem"]
+[ext_resource type="AudioStream" uid="uid://d22pcjqgad075" path="res://Audio/openingMusic.mp3" id="4_33sem"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjrx4"]
+paragraph_spacing = 1.0
+font_size = 60
+stacked_outline_count = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46ak0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vltdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_33sem")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_33sem"]
+font_size = 32
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjrx4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1930.0
+offset_bottom = 1085.0
+color = Color(0.051970966, 0.05197096, 0.05197095, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 668.0
+offset_right = 1893.0
+offset_bottom = 963.0
+text = "Your name is Frank Mease. You are a fire fighter from Galena, Missouri. While on patrol, you noticed a cloth mask lying on a felled oak. You put on the mask…. It guides you."
+label_settings = SubResource("LabelSettings_gjrx4")
+autowrap_mode = 2
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+
+[node name="Panels" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 350)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_46ak0")
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_33sem")
+autoplay = true
+
+[node name="SkipReady" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1596.0
+offset_top = 1011.0
+offset_right = 1900.0
+offset_bottom = 1056.0
+text = "Press SPACE to Skip"
+label_settings = SubResource("LabelSettings_33sem")
