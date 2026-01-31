@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://btoio0vnsrpp4"]
+[gd_scene load_steps=3 format=3 uid="uid://btoio0vnsrpp4"]
 
 [ext_resource type="Texture2D" uid="uid://bfjillf2v8h4a" path="res://RoomSprites/pog.png" id="1_etvrf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etvrf"]
+size = Vector2(30, 100)
 
 [node name="ClosedExit" type="Node2D"]
 
@@ -11,3 +14,9 @@ offset_right = 30.0
 offset_bottom = 50.0
 texture = ExtResource("1_etvrf")
 expand_mode = 1
+
+[node name="Hitbox" type="StaticBody2D" parent="."]
+
+[node name="Collider" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_etvrf")
