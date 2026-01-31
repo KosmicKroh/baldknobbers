@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		$EffectArea.monitoring = false
 	
 	if $EffectArea.monitoring:
-		for thing in $EffectArea.get_overlapping_bodies():
+		for thing in $EffectArea.get_overlapping_areas():
 			if "isWood" in thing:
 				print("lol")
 				thing.on = !isWater

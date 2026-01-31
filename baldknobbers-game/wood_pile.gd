@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 var isWood:bool = true
 var on = false
@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if on:
 		$Sprites.play("on")
 	else:
