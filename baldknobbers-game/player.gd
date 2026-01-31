@@ -5,10 +5,11 @@ const SPEED = 300.0
 var waterTexture = load("res://Sprites/WaterDrop.png")
 var fireTexture = load("res://Sprites/Fireball.png")
 var isWater:bool = true
+var emitTimer = 0.0
 
 
-func _physics_process(_delta: float) -> void:
-
+func _physics_process(delta: float) -> void:
+	emitTimer -= delta
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var directionX := Input.get_axis("walk_left", "walk_right")
@@ -27,16 +28,27 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity *= 0.9
 	
-	if Input.is_action_just_pressed("add_water") and not $Particles.emitting == false:
+	if Input.is_action_just_pressed("add_water") and emitTimer <=0:
 		$Particles.texture = waterTexture
 		$Particles.emitting = true
 		isWater = true
+		emitTimer = 0.5
+		$EffectArea.monitoring = true
 		
-	if Input.is_action_just_pressed("add_fire") and $Particles.emitting == false:
+	if Input.is_action_just_pressed("add_fire") and emitTimer <=0:
 		$Particles.texture = fireTexture
 		$Particles.emitting = true
 		isWater = false
+		emitTimer = 0.5
+		$EffectArea.monitoring = true
 	
-	$EffectArea.monitoring = $Particles.emitting
+	if emitTimer < 0:
+		$EffectArea.monitoring = false
+	
+	if $EffectArea.monitoring:
+		for thing in $EffectArea.get_overlapping_bodies():
+			if "isWood" in thing:
+				print("lol")
+				thing.on = !isWater
 
 	move_and_slide()

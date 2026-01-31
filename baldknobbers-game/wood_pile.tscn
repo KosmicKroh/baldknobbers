@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://8b4qtlcbp6uf"]
+
+[ext_resource type="Texture2D" uid="uid://c7jgkaf563njt" path="res://Sprites/Wood_Out.png" id="1_1dpmw"]
+[ext_resource type="Texture2D" uid="uid://bqth3vy4oaeh3" path="res://Sprites/Wood_On.png" id="2_nf7eh"]
+[ext_resource type="Script" uid="uid://1livobkb344n" path="res://wood_pile.gd" id="3_nf7eh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nf7eh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1dpmw")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nf7eh")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nf7eh"]
+radius = 46.173584
+
+[node name="WoodPile" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_nf7eh")
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nf7eh")
+animation = &"off"
+autoplay = "on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nf7eh")
