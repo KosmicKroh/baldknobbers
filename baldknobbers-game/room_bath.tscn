@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdklj4tvv1oa4"]
+
+[ext_resource type="PackedScene" uid="uid://dfkeumiwry0tg" path="res://room_base.tscn" id="1_manbs"]
+[ext_resource type="Texture2D" uid="uid://by5rys3ot2xp1" path="res://T_Room_Bathroom.png" id="2_36nfh"]
+
+[node name="room_base" instance=ExtResource("1_manbs")]
+
+[node name="BG" parent="Layout" index="0"]
+texture = ExtResource("2_36nfh")
+
+[node name="Exit1" parent="Exits" index="0"]
+position = Vector2(300, 178)
+
+[node name="Exit2" parent="Exits" index="1"]
+position = Vector2(0, 178)
+rotation = -3.1415927
