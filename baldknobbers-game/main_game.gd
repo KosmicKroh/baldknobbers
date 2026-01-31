@@ -26,6 +26,7 @@ func _on_intro_done() -> void:
 	$Player/Collider.disabled = false
 	$Player/PlayerCamera.enabled = true
 	controlTimer = 10.0
+	Globals.played = true
 
 
 func _on_manor_loaded() -> void:
