@@ -5,7 +5,7 @@ paragraph_spacing = 1.0
 font_size = 40
 stacked_outline_count = 1
 
-[node name="Ending 1" type="Node2D"]
+[node name="ending_4" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1930.0
@@ -17,11 +17,9 @@ offset_left = -6.0
 offset_top = 636.0
 offset_right = 1928.0
 offset_bottom = 1091.0
-text = "Having put out the flames inside the manor, Frank steps outside. The onlookers cheer for him. 
-The Mayor hands you the key to the city, but as Frank accepts it, the wind picks up and blows the mask effortlessly. Feeling at peace with his choice, Frank looks on as the mask looks for another.
+text = "Frank runs out of the building, leaving the manor to its fate. The mask loosens its grip enough for him to take it off. Looking down at the mask in his hands, Frank felt uneasy wondering what choice he could have made.
 
-Ending 1/4 
-
+Ending 4 of 4
 "
 label_settings = SubResource("LabelSettings_ipw54")
 autowrap_mode = 2

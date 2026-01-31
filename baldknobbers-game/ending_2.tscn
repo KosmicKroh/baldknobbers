@@ -5,7 +5,7 @@ paragraph_spacing = 1.0
 font_size = 40
 stacked_outline_count = 1
 
-[node name="Ending 1" type="Node2D"]
+[node name="ending_2" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1930.0
@@ -17,11 +17,9 @@ offset_left = -6.0
 offset_top = 636.0
 offset_right = 1928.0
 offset_bottom = 1091.0
-text = "Having put out the flames inside the manor, Frank steps outside. The onlookers cheer for him. 
-The Mayor hands you the key to the city, but as Frank accepts it, the wind picks up and blows the mask effortlessly. Feeling at peace with his choice, Frank looks on as the mask looks for another.
+text = "Having helped set the manor ablaze, Frank revels in the chaos. He begins to hear the mask calling to him. The manor is destroyed. The mask closes its eyeholes and when they open, Frank is surrounded by other Baldknobbers. They nod at him in approval, and Frank begins to feel the mask seal upon his face. He is one of them now.
 
-Ending 1/4 
-
+Ending 2 of 4
 "
 label_settings = SubResource("LabelSettings_ipw54")
 autowrap_mode = 2

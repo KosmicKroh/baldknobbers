@@ -1,8 +1,8 @@
 extends Node2D
 
 var roomScenes = [
-	load("res://room_base.tscn"),
-	load("res://room1.tscn")
+	load("res://room_bath.tscn"),
+	load("res://room_hallway.tscn")
 ]
 var closedExit = load("res://closed_exit.tscn")
 @export var manorSize:int = 50

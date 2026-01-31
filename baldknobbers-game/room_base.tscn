@@ -16,34 +16,6 @@ offset_bottom = 300.0
 texture = ExtResource("1_k3jq5")
 metadata/_edit_use_anchors_ = true
 
-[node name="Arrow" type="ColorRect" parent="Layout"]
-offset_left = 10.0
-offset_top = 130.0
-offset_right = 50.0
-offset_bottom = 170.0
-color = Color(1, 0.4, 1, 1)
-
-[node name="Arrow2" type="ColorRect" parent="Layout"]
-offset_left = 250.0
-offset_top = 130.0
-offset_right = 290.0
-offset_bottom = 170.0
-color = Color(1, 0.4, 0.16470589, 1)
-
-[node name="Arrow3" type="ColorRect" parent="Layout"]
-offset_left = 130.0
-offset_top = 10.0
-offset_right = 170.0
-offset_bottom = 50.0
-color = Color(0.6242957, 0.84866303, 0, 1)
-
-[node name="Arrow4" type="ColorRect" parent="Layout"]
-offset_left = 130.0
-offset_top = 250.0
-offset_right = 170.0
-offset_bottom = 290.0
-color = Color(0, 0.48235294, 0.85490197, 1)
-
 [node name="Exits" type="Node2D" parent="."]
 position = Vector2(0, -150)
 

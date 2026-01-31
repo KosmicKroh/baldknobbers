@@ -48,7 +48,7 @@ amount = 20
 texture = ExtResource("2_i3pqv")
 lifetime = 0.5
 one_shot = true
-speed_scale = 1.3900000000000001
+speed_scale = 1.39
 explosiveness = 0.21
 process_material = SubResource("ParticleProcessMaterial_2hs0m")
 

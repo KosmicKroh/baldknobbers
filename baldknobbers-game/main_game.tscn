@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://t12o18bey1qs"]
+[gd_scene load_steps=3 format=3 uid="uid://t12o18bey1qs"]
 
 [ext_resource type="PackedScene" uid="uid://bebwxn5drahad" path="res://manor.tscn" id="1_1oj5k"]
+[ext_resource type="PackedScene" uid="uid://crsdvtn5cgwds" path="res://player.tscn" id="2_yx7mw"]
 
 [node name="MainGame" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.2, 0.2)
-
 [node name="Manor" parent="." instance=ExtResource("1_1oj5k")]
+
+[node name="Player" parent="." instance=ExtResource("2_yx7mw")]
