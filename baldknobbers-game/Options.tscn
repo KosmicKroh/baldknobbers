@@ -43,4 +43,27 @@ offset_bottom = 76.0
 text = "
 "
 
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 377.0
+offset_right = 1116.0
+offset_bottom = 512.0
+min_value = -80.0
+max_value = 24.0
+scrollable = false
+
+[node name="Sound" type="Label" parent="."]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 334.0
+offset_right = 1049.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [connection signal="pressed" from="Back/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
