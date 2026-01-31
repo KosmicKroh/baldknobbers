@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://be0gw1jsr4cgt"]
+[gd_scene load_steps=11 format=3 uid="uid://be0gw1jsr4cgt"]
 
 [ext_resource type="Texture2D" uid="uid://bxhacq1rjhan7" path="res://TempTitleScreenBg.png" id="1_ax32a"]
 [ext_resource type="Script" uid="uid://ds5io6jvf6tai" path="res://title.gd" id="1_quvj1"]
+[ext_resource type="AudioStream" uid="uid://d22pcjqgad075" path="res://Audio/openingMusic.mp3" id="3_quvj1"]
+[ext_resource type="Texture2D" uid="uid://did0ca8cqpphr" path="res://Sprites/playerSprite.png" id="4_rg4ux"]
+[ext_resource type="Texture2D" uid="uid://cuhrucg6xgt4y" path="res://Sprites/LockedKnobber.png" id="5_yytgh"]
+[ext_resource type="Texture2D" uid="uid://0vnx66yfm7rm" path="res://Sprites/playerSprite2.png" id="6_ti4w6"]
+[ext_resource type="Texture2D" uid="uid://bdbby7cqsaua8" path="res://Sprites/playerSprite3.png" id="7_e8qc1"]
+[ext_resource type="Texture2D" uid="uid://r48rb1t1sg4n" path="res://Sprites/playerSprite4.png" id="8_xyp27"]
+[ext_resource type="Texture2D" uid="uid://domblll8t5iqd" path="res://Sprites/playerSprite5.png" id="9_73gom"]
+[ext_resource type="Texture2D" uid="uid://drv2rymieaktu" path="res://Sprites/playerSprite6.png" id="10_gvmy1"]
 
 [node name="Title" type="Control"]
 layout_mode = 3
@@ -101,7 +109,7 @@ offset_right = 1188.0
 offset_bottom = 246.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "BallKnobbers"
+text = "Baldknobbers"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -125,9 +133,96 @@ offset_right = 575.0
 offset_bottom = 257.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "Mayor Manor"
+text = "Mayor's Manor"
 horizontal_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_quvj1")
+autoplay = true
+
+[node name="SkinButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Skin1" type="TextureButton" parent="SkinButtons"]
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 250.0
+offset_right = 1478.0
+offset_bottom = 378.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(64, 64)
+texture_normal = ExtResource("4_rg4ux")
+texture_disabled = ExtResource("5_yytgh")
+ignore_texture_size = true
+
+[node name="Skin2" type="TextureButton" parent="SkinButtons"]
+layout_mode = 0
+offset_left = 1550.0
+offset_top = 250.0
+offset_right = 1678.0
+offset_bottom = 378.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(64, 64)
+texture_normal = ExtResource("6_ti4w6")
+texture_disabled = ExtResource("5_yytgh")
+ignore_texture_size = true
+
+[node name="Skin3" type="TextureButton" parent="SkinButtons"]
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 450.0
+offset_right = 1478.0
+offset_bottom = 578.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(64, 64)
+texture_normal = ExtResource("7_e8qc1")
+texture_disabled = ExtResource("5_yytgh")
+ignore_texture_size = true
+
+[node name="Skin4" type="TextureButton" parent="SkinButtons"]
+layout_mode = 0
+offset_left = 1550.0
+offset_top = 450.0
+offset_right = 1678.0
+offset_bottom = 578.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(64, 64)
+texture_normal = ExtResource("8_xyp27")
+texture_disabled = ExtResource("5_yytgh")
+ignore_texture_size = true
+
+[node name="Skin5" type="TextureButton" parent="SkinButtons"]
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 650.0
+offset_right = 1478.0
+offset_bottom = 778.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(64, 64)
+texture_normal = ExtResource("9_73gom")
+texture_disabled = ExtResource("5_yytgh")
+ignore_texture_size = true
+
+[node name="Skin6" type="TextureButton" parent="SkinButtons"]
+layout_mode = 0
+offset_left = 1550.0
+offset_top = 650.0
+offset_right = 1678.0
+offset_bottom = 778.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(64, 64)
+texture_normal = ExtResource("10_gvmy1")
+texture_disabled = ExtResource("5_yytgh")
+ignore_texture_size = true
 
 [connection signal="pressed" from="Start/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Options/OptionButton" to="." method="_on_option_button_pressed"]
 [connection signal="pressed" from="Quit/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="SkinButtons/Skin1" to="." method="_on_skin_button_pressed" binds= [0]]
+[connection signal="pressed" from="SkinButtons/Skin2" to="." method="_on_skin_button_pressed" binds= [1]]
+[connection signal="pressed" from="SkinButtons/Skin3" to="." method="_on_skin_button_pressed" binds= [2]]
+[connection signal="pressed" from="SkinButtons/Skin4" to="." method="_on_skin_button_pressed" binds= [3]]
+[connection signal="pressed" from="SkinButtons/Skin5" to="." method="_on_skin_button_pressed" binds= [4]]
+[connection signal="pressed" from="SkinButtons/Skin6" to="." method="_on_skin_button_pressed" binds= [5]]

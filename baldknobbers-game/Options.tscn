@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://clso20f02usqb"]
+[gd_scene load_steps=4 format=3 uid="uid://clso20f02usqb"]
 
 [ext_resource type="Script" uid="uid://bvgtpuhvlb787" path="res://options.gd" id="1_yia4p"]
 [ext_resource type="Texture2D" uid="uid://bxhacq1rjhan7" path="res://TempTitleScreenBg.png" id="2_ywiuv"]
+[ext_resource type="AudioStream" uid="uid://d22pcjqgad075" path="res://Audio/openingMusic.mp3" id="3_ywiuv"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -49,8 +50,6 @@ offset_left = 794.0
 offset_top = 377.0
 offset_right = 1116.0
 offset_bottom = 512.0
-min_value = -80.0
-max_value = 24.0
 scrollable = false
 
 [node name="Sound" type="Label" parent="."]
@@ -64,6 +63,10 @@ theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ywiuv")
+autoplay = true
 
 [connection signal="pressed" from="Back/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
