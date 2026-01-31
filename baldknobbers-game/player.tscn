@@ -1,18 +1,70 @@
-[gd_scene load_steps=4 format=3 uid="uid://crsdvtn5cgwds"]
+[gd_scene load_steps=11 format=3 uid="uid://crsdvtn5cgwds"]
 
 [ext_resource type="Texture2D" uid="uid://28k7yvg5waf8" path="res://Sprites/BaldknobberPlaceholder.jpg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://d1fent70vmhh4" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://ck58ka2nsdr55" path="res://Sprites/Water Drop.png" id="2_i3pqv"]
+
+[sub_resource type="Curve" id="Curve_i3pqv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.82558143, 0.58646), -0.5632377, -0.5632377, 0, 0, Vector2(1, 0), -3.3748415, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_hqtel"]
+curve = SubResource("Curve_i3pqv")
+
+[sub_resource type="Curve" id="Curve_hqtel"]
+_data = [Vector2(0, 0.5228385), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sweqy"]
+curve = SubResource("Curve_hqtel")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2hs0m"]
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 184.90001
+spread = 11.25
+initial_velocity_min = 100.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_sweqy")
+alpha_curve = SubResource("CurveTexture_hqtel")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(60, 66)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 40.012497
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_onrkg")
 
+[node name="Particles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 20
+texture = ExtResource("2_i3pqv")
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.3900000000000001
+explosiveness = 0.21
+process_material = SubResource("ParticleProcessMaterial_2hs0m")
+
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_4flbx")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sh265")
+
+[node name="EffectArea" type="Area2D" parent="."]
+monitoring = false
+
+[node name="Collider" type="CollisionShape2D" parent="EffectArea"]
+position = Vector2(21, 0)
+shape = SubResource("CircleShape2D_i3pqv")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
