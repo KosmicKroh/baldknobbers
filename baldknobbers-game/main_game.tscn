@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bebwxn5drahad" path="res://manor.tscn" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://crsdvtn5cgwds" path="res://player.tscn" id="2_yx7mw"]
-[ext_resource type="AudioStream" uid="uid://cfuwxiy1vajfy" path="res://Audio/baldknobberMusic.mp3" id="3_ykeeq"]
+[ext_resource type="AudioStream" path="res://Audio/baldknobberMusic.mp3" id="3_ykeeq"]
 
 [node name="MainGame" type="Node2D"]
 
