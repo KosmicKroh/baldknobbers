@@ -50,6 +50,7 @@ Ending 3 of 4
 "
 label_settings = SubResource("LabelSettings_ipw54")
 autowrap_mode = 2
+visible_characters_behavior = 1
 
 [node name="Panel" type="Sprite2D" parent="."]
 position = Vector2(960, 360)

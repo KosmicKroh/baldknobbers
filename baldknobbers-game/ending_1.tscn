@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b6hagaq24l50b" path="res://IntroOutro/Ending1.png" id="1_on5ec"]
 [ext_resource type="Script" uid="uid://c1ww71geub3od" path="res://ending.gd" id="1_trqny"]
 [ext_resource type="AudioStream" uid="uid://da345jkve2fmc" path="res://Audio/endingMusic.mp3" id="3_0tjmg"]
-[ext_resource type="AudioStream" uid="uid://ho8862w064xv" path="res://Audio/HuhSFX.mp3" id="4_qfwha"]
+[ext_resource type="AudioStream" uid="uid://bbew31fbhgagk" path="res://Audio/CheerSFX.mp3" id="4_qfwha"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrfl"]
 paragraph_spacing = 1.0
@@ -49,6 +49,7 @@ text = "Having put out the flames inside the manor, Frank steps outside. The onl
 Ending 1 of 4"
 label_settings = SubResource("LabelSettings_nfrfl")
 autowrap_mode = 2
+visible_characters_behavior = 1
 
 [node name="Panel" type="Sprite2D" parent="."]
 position = Vector2(960, 360)

@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		controlTimer -= delta
 	else:
 		$Controls.visible = false
-	if Globals.timer < 395:
+	if Globals.timer < 30:
 		for body in $Entrance.get_overlapping_bodies():
 			if "isPlayer" in body:
 				Globals.loadEnding(4)
