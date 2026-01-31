@@ -1,11 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2lqgxnwvmhkt"]
+[gd_scene load_steps=8 format=3 uid="uid://c2lqgxnwvmhkt"]
+
+[ext_resource type="Script" uid="uid://c1ww71geub3od" path="res://ending.gd" id="1_14cah"]
+[ext_resource type="Texture2D" uid="uid://dx3nyjui67ciy" path="res://IntroOutro/Ending2.png" id="1_c42r1"]
+[ext_resource type="AudioStream" uid="uid://da345jkve2fmc" path="res://Audio/endingMusic.mp3" id="3_gthrs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ipw54"]
 paragraph_spacing = 1.0
 font_size = 40
 stacked_outline_count = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14cah"]
+bg_color = Color(0.84029144, 0.901621, 0.94314694, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gthrs"]
+bg_color = Color(0.59182686, 0.73975664, 0.8386459, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ga2hh"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="ending_2" type="Node2D"]
+script = ExtResource("1_14cah")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1930.0
@@ -13,13 +39,40 @@ offset_bottom = 1085.0
 color = Color(0.051970966, 0.05197096, 0.05197095, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -6.0
+offset_left = 42.0
 offset_top = 636.0
-offset_right = 1928.0
-offset_bottom = 1091.0
+offset_right = 1878.0
+offset_bottom = 1046.0
 text = "Having helped set the manor ablaze, Frank revels in the chaos. He begins to hear the mask calling to him. The manor is destroyed. The mask closes its eyeholes and when they open, Frank is surrounded by other Baldknobbers. They nod at him in approval, and Frank begins to feel the mask seal upon his face. He is one of them now.
 
-Ending 2 of 4
-"
+Ending 2 of 4"
 label_settings = SubResource("LabelSettings_ipw54")
 autowrap_mode = 2
+
+[node name="Panel" type="Sprite2D" parent="."]
+position = Vector2(960, 360)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_c42r1")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1382.0
+offset_top = 910.0
+offset_right = 1756.0
+offset_bottom = 1020.0
+theme_override_colors/font_color = Color(0.11858118, 0.118581496, 0.11858127, 1)
+theme_override_colors/font_focus_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_colors/font_pressed_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_colors/font_hover_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_14cah")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gthrs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ga2hh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gthrs")
+text = "Continue"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gthrs")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_continue_pressed"]

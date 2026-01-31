@@ -54,6 +54,5 @@ func _physics_process(delta: float) -> void:
 				if !isWater and !thing.on:
 					thing.on = true
 					Globals.fireCount += 1
-				print(Globals.fireCount)
 
 	move_and_slide()

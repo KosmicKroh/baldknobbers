@@ -8,6 +8,7 @@ signal done
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Panels.frame = 0
+	Globals.timer = 400.0
 	$Label.text = "Your name is Frank Mease. You are a fire fighter from Galena, Missouri. While on patrol, you noticed a cloth mask lying on a felled oak. You put on the mask…. It guides you."
 	$SkipReady.visible = false
 	loaded = false

@@ -1,11 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgypv0asrx461"]
+[gd_scene load_steps=8 format=3 uid="uid://bgypv0asrx461"]
+
+[ext_resource type="Texture2D" uid="uid://b6d1u4lex1sxl" path="res://IntroOutro/Ending4.png" id="1_ku08p"]
+[ext_resource type="Script" uid="uid://c1ww71geub3od" path="res://ending.gd" id="1_lls5m"]
+[ext_resource type="AudioStream" uid="uid://da345jkve2fmc" path="res://Audio/endingMusic.mp3" id="3_eult6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ipw54"]
 paragraph_spacing = 1.0
 font_size = 40
 stacked_outline_count = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lls5m"]
+bg_color = Color(0.84029144, 0.901621, 0.94314694, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eult6"]
+bg_color = Color(0.59182686, 0.73975664, 0.8386459, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqx0q"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="ending_4" type="Node2D"]
+script = ExtResource("1_lls5m")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1930.0
@@ -13,13 +39,41 @@ offset_bottom = 1085.0
 color = Color(0.051970966, 0.05197096, 0.05197095, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -6.0
+offset_left = 63.0
 offset_top = 636.0
-offset_right = 1928.0
-offset_bottom = 1091.0
-text = "Frank runs out of the building, leaving the manor to its fate. The mask loosens its grip enough for him to take it off. Looking down at the mask in his hands, Frank felt uneasy wondering what choice he could have made.
+offset_right = 1857.0
+offset_bottom = 984.0
+text = "Frank runs out of the building, leaving the manor to its fate. The mask loosens its grip enough for him to take it off. Looking down at the mask in his hands, Frank felt uneasy wondering what choices he could have made.
 
 Ending 4 of 4
 "
 label_settings = SubResource("LabelSettings_ipw54")
 autowrap_mode = 2
+
+[node name="Panel" type="Sprite2D" parent="."]
+position = Vector2(960, 360)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_ku08p")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1382.0
+offset_top = 910.0
+offset_right = 1756.0
+offset_bottom = 1020.0
+theme_override_colors/font_color = Color(0.11858118, 0.118581496, 0.11858127, 1)
+theme_override_colors/font_focus_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_colors/font_pressed_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_colors/font_hover_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_lls5m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eult6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xqx0q")
+theme_override_styles/focus = SubResource("StyleBoxFlat_eult6")
+text = "Continue"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_eult6")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_continue_pressed"]
