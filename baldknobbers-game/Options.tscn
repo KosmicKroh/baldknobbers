@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://clso20f02usqb"]
+
+[ext_resource type="Script" uid="uid://bvgtpuhvlb787" path="res://options.gd" id="1_yia4p"]
+[ext_resource type="Texture2D" uid="uid://bxhacq1rjhan7" path="res://TempTitleScreenBg.png" id="2_ywiuv"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yia4p")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1925.0
+offset_bottom = 1064.0
+texture = ExtResource("2_ywiuv")
+
+[node name="Back" type="Label" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 550.0
+offset_right = 1048.0
+offset_bottom = 634.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="BackButton" type="Button" parent="Back"]
+modulate = Color(1, 1, 1, 0)
+light_mask = 4
+visibility_layer = 4
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 198.0
+offset_bottom = 76.0
+text = "
+"
+
+[connection signal="pressed" from="Back/BackButton" to="." method="_on_back_button_pressed"]
