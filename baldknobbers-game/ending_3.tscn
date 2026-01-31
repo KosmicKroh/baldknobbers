@@ -1,11 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsiqbpjwy0ok1"]
+[gd_scene load_steps=8 format=3 uid="uid://dsiqbpjwy0ok1"]
+
+[ext_resource type="Texture2D" uid="uid://cx8cgbnedxl23" path="res://IntroOutro/Ending3.png" id="1_em28o"]
+[ext_resource type="Script" uid="uid://c1ww71geub3od" path="res://ending.gd" id="1_q8f4u"]
+[ext_resource type="AudioStream" uid="uid://da345jkve2fmc" path="res://Audio/endingMusic.mp3" id="3_aict5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ipw54"]
 paragraph_spacing = 1.0
 font_size = 40
 stacked_outline_count = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8f4u"]
+bg_color = Color(0.84029144, 0.901621, 0.94314694, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aict5"]
+bg_color = Color(0.59182686, 0.73975664, 0.8386459, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gw1y"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="ending_3" type="Node2D"]
+script = ExtResource("1_q8f4u")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1930.0
@@ -13,13 +39,41 @@ offset_bottom = 1085.0
 color = Color(0.051970966, 0.05197096, 0.05197095, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -6.0
+offset_left = 44.0
 offset_top = 636.0
-offset_right = 1928.0
-offset_bottom = 1091.0
-text = "Having run out of time, the mask closes itself on Frank. The world is dark and quiet. Frank tries to yell out but his mouth is sealed as well. Everything starts to go numb until finally, he feels nothing at all.
+offset_right = 1862.0
+offset_bottom = 984.0
+text = "Having run out of time to escape the smoldering rubble, the mask closes itself on Frank. The world is dark and quiet. Frank tries to yell out but his mouth is sealed as well. Everything starts to go numb until finally, he feels nothing at all.
 
 Ending 3 of 4 
 "
 label_settings = SubResource("LabelSettings_ipw54")
 autowrap_mode = 2
+
+[node name="Panel" type="Sprite2D" parent="."]
+position = Vector2(960, 360)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_em28o")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1382.0
+offset_top = 910.0
+offset_right = 1756.0
+offset_bottom = 1020.0
+theme_override_colors/font_color = Color(0.11858118, 0.118581496, 0.11858127, 1)
+theme_override_colors/font_focus_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_colors/font_pressed_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_colors/font_hover_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_q8f4u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aict5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4gw1y")
+theme_override_styles/focus = SubResource("StyleBoxFlat_aict5")
+text = "Continue"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aict5")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_continue_pressed"]

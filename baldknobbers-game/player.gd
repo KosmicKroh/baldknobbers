@@ -16,6 +16,9 @@ func _physics_process(delta: float) -> void:
 	var directionY := Input.get_axis("walk_up", "walk_down")
 	
 	if directionX or directionY:
+		if Globals.timerEnabled == false:
+			Globals.timer = 400.0
+			Globals.timerEnabled = true
 		velocity += (Vector2(directionX,directionY).normalized()*SPEED-velocity)*0.1
 		if directionX == 1:
 			rotation = 0
@@ -51,6 +54,5 @@ func _physics_process(delta: float) -> void:
 				if !isWater and !thing.on:
 					thing.on = true
 					Globals.fireCount += 1
-				print(Globals.fireCount)
 
 	move_and_slide()

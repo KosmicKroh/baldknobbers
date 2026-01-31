@@ -8,11 +8,12 @@ func _ready() -> void:
 	$Player/PlayerCamera.enabled = false
 	controlTimer = 0
 	$Controls.visible = false
-
+	$Scoreboard.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if controlTimer > 0:
+		$Scoreboard.visible = true
 		$Controls.visible = true
 		$Controls/Modulate.color = Color(1.0,1.0,1.0,min(controlTimer*0.5,1.0))
 		controlTimer -= delta
